@@ -25,7 +25,7 @@ public class ActivityService {
 
         Activity savedActivity = activityRepository.save(activity);
 
-        return mapToResponse(activity);
+        return mapToResponse(savedActivity);
 
     }
 
@@ -36,8 +36,8 @@ public class ActivityService {
         response.setType(activity.getType());
         response.setDuration(activity.getDuration());
         response.setCaloriesBurned(activity.getCaloriesBurned());
-        response.setStartTime(response.getStartTime());
-        response.setAdditionalMetrics(response.getAdditionalMetrics());
+        response.setStartTime(activity.getStartTime());
+        response.setAdditionalMetrics(activity.getAdditionalMetrics());
         response.setCreatedAt(activity.getCreatedAt());
         response.setUpdatedAt(activity.getUpdatedAt());
         return response;
